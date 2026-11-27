@@ -56,6 +56,11 @@ jobs:
 
     - name: Azure Login
       uses: Azure/login@v3.1.0
+      with:
+        tenant-id: ${{ vars.AZURE_TENANT_ID }}
+        subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+        client-id: ${{ vars.AZURE_CLIENT_ID }}
+        mask-client-id: false
 
   deploy:
     permissions:
